@@ -18,6 +18,7 @@ h4,
 h5,
 h6 {
   font-family: "Oswald", sans-serif;
+  color: dodgerblue;
 }
 
 body {
@@ -27,14 +28,45 @@ body {
 /**************************************************************/
 /* Specific Stylings */
 
-.header {
+header {
   padding: 48px 16px;
   text-align: center;
   background-color: #eee;
 }
 
-.main {
+.nav-link a {
+  padding: 4px 8px;
+  color: black;
+}
+
+.nav-link a:hover {
+  color: black;
+  background-color: lightgray;
+}
+
+.nav-link a:active {
+  color: white;
+  background-color: grey;
+}
+
+.nav-link a + .nav-link a {
+  margin-left: 16px;
+}
+
+main {
   max-width: 800px;
   margin: 0 auto;
   padding: 16px;
+}
+
+.main > * + * {
+  margin-top: 48px;
+}
+
+.main > * {
+  border-top: 2px solid grey;
+}
+
+.main > *:first-child {
+  border-top: none;
 }
