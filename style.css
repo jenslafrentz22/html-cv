@@ -7,8 +7,40 @@
   box-sizing: border-box;
 }
 
-* {
+html {
   font-family: "Roboto", sans-serif;
+  font-size: 16px;
+}
+
+@media screen and (min-width: 768px) {
+  html {
+    font-size: 18px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  html {
+    font-size: 20px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .hire-me {
+    position: fixed;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .main > * + * {
+    margin-top: 5rem;
+  }
+}
+
+@media print {
+  .nav-link,
+  .hire-me {
+    display: none;
+  }
 }
 
 h1,
@@ -26,20 +58,42 @@ body {
 }
 
 *::selection {
-  background-color: plum;
+  background-color: plum; /* Farbe für markierten Text */
 }
 
 /**************************************************************/
 /* Specific Stylings */
 
 header {
-  padding: 48px 16px;
+  padding: 4.5rem 1rem; /* 72px 16px */
   text-align: center;
   background-color: #eee;
+  position: relative;
+}
+
+.heading-group {
+  font-size: 4rem;
+}
+
+.main-heading {
+  font-size: 2rem;
+}
+
+.profession {
+  font-size: 1rem;
 }
 
 .profession::after {
   content: "🕺";
+}
+
+.hire-me {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  padding: 0.5rem;
+  background-color: plum;
+  border-radius: 5px;
 }
 
 .nav-link a {
@@ -58,23 +112,40 @@ header {
 }
 
 .nav-link a + .nav-link a {
-  margin-left: 16px;
+  margin-left: 1rem; /* Abstand links, außer bei 1. Link */
 }
 
 main {
-  max-width: 800px;
+  max-width: 80ch; /*800px*/
   margin: 0 auto;
-  padding: 16px;
+  padding: 1rem;
 }
 
 .main > * + * {
-  margin-top: 48px;
+  margin-top: 3rem; /* Abstand oben, außer beim 1. Child-Element */
+  border-top: 2px solid grey; /* alle außer dem 1. Child-Element */
 }
 
+/*
 .main > * {
-  border-top: 2px solid grey;
+  border-top: 2px solid grey; 
 }
 
 .main > *:first-child {
   border-top: none;
+}
+*/
+
+article {
+  padding-left: 1rem;
+}
+
+article h2 {
+  position: relative;
+  left: -1rem;
+}
+
+.experience-heading,
+.experience-subheading {
+  display: inline-block;
 }
